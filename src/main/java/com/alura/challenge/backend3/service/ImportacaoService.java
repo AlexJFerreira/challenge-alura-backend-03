@@ -23,7 +23,7 @@ public class ImportacaoService {
 	}
 
 	public List<Importacao> recuperaImportacoes() {
-		return importacaoRepository.findAll();
+		return importacaoRepository.findAllByOrderByDataTransacaoImportacaoDesc();
 	}
 
 }

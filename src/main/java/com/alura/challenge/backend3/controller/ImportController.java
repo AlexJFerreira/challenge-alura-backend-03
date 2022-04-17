@@ -16,7 +16,7 @@ import com.alura.challenge.backend3.exception.ProcessedDateException;
 import com.alura.challenge.backend3.service.ProcessamentoService;
 
 @Controller
-public class FormController {
+public class ImportController {
 	
 	@Autowired
 	private ProcessamentoService processamentoService;
