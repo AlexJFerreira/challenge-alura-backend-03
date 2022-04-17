@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Importações</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1> Importações Realizadas</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<table class="table">
+						<thead>
+							<tr>
+								<th>Data Transações</th>
+								<th>Data Importação</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:if="${importacoes.empty}">
+								<td colspan="2">Nenhuma importação foi realizada</td>
+							</tr>
+							<tr th:each="importacao : ${importacoes}">
+								<td><span th:text="${importacao.dataHoraImportacao}"> Data Transações </span></td>
+								<td><span th:text="${importacao.dataTransacaoImportacao}"> Data Importação </span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+</body>
+</html>

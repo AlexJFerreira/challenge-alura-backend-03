@@ -22,6 +22,7 @@ public class CsvMapper {
 
 		final CsvToBean<TransacaoDTO> cb = new CsvToBeanBuilder<TransacaoDTO>(reader)
 				.withType(TransacaoDTO.class)
+				.withFilter(new CsvMapperFilter(ms))
 				.withMappingStrategy(ms).build();
 
 		return cb.parse();
