@@ -1,10 +1,18 @@
+CREATE TABLE usuario ( 
+   id_usuario INT auto_increment primary key NOT NULL, 
+   nome  VARCHAR(75) NOT NULL,
+   email VARCHAR(50) NOT NULL,
+   senha VARCHAR(50) NOT NULL
+);
+
+
 CREATE TABLE importacao ( 
    data_transacao_importacao DATE primary key NOT NULL,
    data_hora_importacao TIMESTAMP NOT NULL
 );
 
 CREATE TABLE transacao ( 
-   id INT auto_increment primary key NOT NULL, 
+   id_transacao INT auto_increment primary key NOT NULL, 
    banco_origem VARCHAR(100) NOT NULL, 
    agencia_origem VARCHAR(10) NOT NULL, 
    conta_origem VARCHAR(10) NOT NULL, 

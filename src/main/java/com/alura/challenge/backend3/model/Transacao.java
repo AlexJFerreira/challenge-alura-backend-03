@@ -15,6 +15,7 @@ public class Transacao {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_transacao", nullable = false)
 	private Integer id;
 
 	@Column(name = "banco_origem", nullable = false)

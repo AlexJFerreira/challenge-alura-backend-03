@@ -24,7 +24,7 @@ public class ProcessamentoService {
 		importacaoService.processaImportacao(transacaoService.recuperaTransacoes(file));
 	}
 	
-	public List<Importacao> recuperaImportacoes() throws IOException, EmptyFileException, ProcessedDateException {		
+	public List<Importacao> recuperaImportacoes() {		
 		return importacaoService.recuperaImportacoes();
 	}
 
