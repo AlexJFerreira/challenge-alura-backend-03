@@ -17,7 +17,7 @@ import com.alura.challenge.backend3.service.CadastroService;
 import com.alura.challenge.backend3.service.ProcessamentoService;
 
 @Controller
-public class ImportFileController {
+public class ImportController {
 		
 	@Autowired
 	private ProcessamentoService processamentoService;

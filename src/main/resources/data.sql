@@ -2,7 +2,7 @@ CREATE TABLE usuario (
    id_usuario INT auto_increment primary key NOT NULL, 
    nome  VARCHAR(75) NOT NULL,
    email VARCHAR(50) NOT NULL,
-   senha VARCHAR(50) NOT NULL
+   senha VARCHAR(100) NOT NULL
 );
 
 
@@ -25,3 +25,5 @@ CREATE TABLE transacao (
    foreign key (data_transacao_importacao) references importacao(data_transacao_importacao)
 );
 
+INSERT INTO usuario (nome, email, senha)
+VALUES ('Admin', ' admin@email.com.br', '123999');

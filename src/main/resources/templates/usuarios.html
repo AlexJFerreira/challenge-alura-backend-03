@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Usuários Cadastrados</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Usuários Cadastrados</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<a class="btn btn-success" href="#" th:href="@{/cadastro_usuario}">Novo
+				</a>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Nome</th>
+							<th>Email</th>
+							<th>Opções</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:if="${usuarios.empty}">
+							<td colspan="2">Nenhuma usuário foi cadastrado</td>
+						</tr>
+						<tr th:each="usuario : ${usuarios}">
+							<td><span th:text="${usuario.id}"></span></td>
+							<td><span th:text="${usuario.nome}"></span></td>
+							<td><span th:text="${usuario.email}"></span></td>
+							<td>
+							<a class="btn btn-success" href="#" th:href="@{/editarUsuario/{id}(id=${usuario.id})}">Editar</a> 
+							<a class="btn btn-success" href="#" th:href="@{/removerUsuario//{id}(id=${usuario.id})}">Remover</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

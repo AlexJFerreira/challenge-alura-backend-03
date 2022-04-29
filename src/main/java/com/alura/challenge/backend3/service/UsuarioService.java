@@ -1,6 +1,7 @@
 package com.alura.challenge.backend3.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,24 +15,24 @@ public class UsuarioService {
 	@Autowired
 	private UsuarioRepository repository;
 	
-	private List<Usuario> getAllUsers(){
-		return repository.findAll();
-	}
-	
-	private Usuario getUserById(final Integer id){
-		return repository.getById(id);
-	}
-	
-	private void deleteUserById(final Integer id){
-		repository.deleteById(id);
-	}
-	
 	public Usuario createUser(final Usuario user){
 		return repository.save(user);
 	}
 	
-	private Usuario updateUser(final Usuario user){
-		return repository.save(user);
+	public Optional<Usuario> findUserByEmail(final String email){
+		return repository.findByEmail(email);
+	}
+	
+	public List<Usuario> getAllUsers(){
+		return repository.findAll();
+	}
+	
+	public void removeUser(Usuario user){
+		repository.delete(user);
+	}
+	
+	public Usuario updateUser(final Usuario user){
+		return repository.saveAndFlush(user);
 	}
 
 }
